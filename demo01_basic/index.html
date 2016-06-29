@@ -1,0 +1,47 @@
+<html ng-app = "bookStore">  
+<head>
+	<title> Angular JS Demo</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css" /> 
+	<link rel="stylesheet" type="text/css" href="ng-table.min.css" /> 
+</head>
+<script type="text/javascript" src="angular.min.js"></script> 
+<script type="text/javascript" src="app.js"></script> 
+<script type="text/javascript" src="ng-table.min.js"></script>
+
+<body>
+<div ng-controller = "StoreController as store">
+<div >
+	<p> This is an example of ngTable: demo01_basic, by linxiongmin@gmail.com</p>
+	<a href = "http://plnkr.co/edit/WFjgtT?p=preview" target="_blank"> Plunker </a><br>
+	<a href = "https://github.com/ShelmyLin/ng-table_demos"> Github </a><br>
+	<a href = "http://stackoverflow.com/questions/38094991/cant-load-an-array-to-ngtable/38095353#38095353"> stackoverflow </a>
+</div>
+
+<!-- ng-table example -->
+<div>
+
+<table ng-table="store.bookTable" class="table" show-filter="true">
+	<tr ng-repeat = "row in $data">
+
+		<td title = "'name'" filter="{name: 'text'}" sortable="'name'">
+			{{row.name}} 
+		</td>
+		<td title = "'price'" filter="{price: 'number'}" sortable="'price'">
+			{{row.price}}
+		</td>
+		<td title = "'comment'" filter="{comment: 'text'}" sortable="'comment'">
+			{{row.comment}}
+		</td>
+		
+
+	</tr>
+</table>
+
+</div>
+
+
+</div>
+
+</body>
+</html>
+
